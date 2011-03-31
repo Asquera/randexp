@@ -1,11 +1,12 @@
 class Randexp::Dictionary
   def self.load_dictionary
+    dir = File.dirname(__FILE__)
     if File.exists?("/usr/share/dict/words")
       File.read("/usr/share/dict/words").split
     elsif File.exists?("/usr/dict/words")
       File.read("/usr/dict/words").split
-    elsif  File.exists?("#{dir}/../../../wordlists/words")
-      File.read("#{dir}/../../../wordlists/words").split
+    elsif  File.exists?("#{dir}/../../wordlists/words")
+      File.read("#{dir}/../../wordlists/words").split
     else
       raise "words file not found"
     end
