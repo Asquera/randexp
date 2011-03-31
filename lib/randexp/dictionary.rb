@@ -4,7 +4,7 @@ class Randexp::Dictionary
       File.read("/usr/share/dict/words").split
     elsif File.exists?("/usr/dict/words")
       File.read("/usr/dict/words").split
-    else  File.exists?("#{dir}/../../../wordlists/words")
+    elsif  File.exists?("#{dir}/../../../wordlists/words")
       File.read("#{dir}/../../../wordlists/words").split
     else
       raise "words file not found"
